@@ -1,0 +1,110 @@
+<html>
+	<head>
+		<script type="text/javascript" src="javascript.js"></script>
+		<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+	</head>
+<body onload="init();" onkeydown="setKeyPressed(event.keyCode); event.cancelBubble=true;" onkeyup="setKeyPressed('');" scroll="no" >
+	
+<table style="height:100%; width:100%;"><tr><td style="height:100%; width:100%" align="center">
+	
+	<audio src="sounds/laser.ogg" id="Sounds_Laser" autobuffer volume="50"></audio>
+	<audio src="sounds/antigravity_start.ogg" id="Sounds_AntiGravity_Start" autobuffer></audio>
+	
+	<div id="GamePane" style="visibility:hidden;">
+		<table style=" margin:15px; border:1px solid silver; background-color:#AAA;" cellpadding="0" cellspacing="0" >
+			<tr>
+				<td>
+					<table style="width:100%;">
+						<tr>
+							<td style="width:20%;">
+								<!-- Anti gravity progress bar -->
+								<div class="DashboardIndicator">
+									Anti Gravity (G) : <span id="AntiGravityStatusLabel"></span>
+								</div>
+							</td>
+							
+							<td style="width:20%;">
+								<!-- Anti gravity progress bar -->
+								<div class="DashboardIndicator">
+									Wrap Edges (W) : <span id="WrapEdgesStatusLabel"></span>
+								</div>
+							</td>
+							
+							<td style="width:20%;">
+								<!-- Anti gravity progress bar -->
+								<div class="DashboardIndicator">
+									Weapons: 
+								</div>
+							</td>
+							
+							<td style="width:20%;">
+								<!-- Anti gravity progress bar -->
+								<div class="DashboardIndicator">
+									Lives: 
+								</div>
+							</td>
+							
+							<td style="width:20%;">
+								<!-- Anti gravity progress bar -->
+								<div class="DashboardIndicator">
+									Key: <span id="CurrentKeyPressedLabel"></span>
+								</div>
+							</td>
+							
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<table>
+						<tr>
+							<td>
+		
+								<div id="ContentPane">
+									
+									<!-- Laser beams -->
+									<div id="LaserBeamVertical" class="laser" style="width:2px; background-color:red; position:absolute; top:0px; display:none;"></div>
+									<div id="LaserBeamHorizontal" class="laser" style="height:2px; background-color:red; position:absolute; left:0px; display:none;"></div>
+
+									<!-- Player Icon -->
+									<div id="MainIcon"></div>
+
+									<!-- Left Position Marker -->
+									<div id="PositionMarkerVertical" style="position:absolute; border-right:2px solid red; width:0px;"></div>
+
+									<!-- Top Position marker -->
+									<div id="PositionMarkerHorizontal" style="position:absolute; border-bottom:2px solid red; height:0px;"></div>	
+								
+								</div>
+								
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<table style="width:100%;">
+						<tr>
+							<td>
+								<div class="DashboardIndicator">Keys: Fire Up: E - Fire Down: D - Fire Left: S - Fire Right: F - Reset Position: ENTER</div>
+							</td>
+							<td style="width:140px">
+								<div class="DashboardIndicator">
+									Position: 
+									<!-- Can't update these with the timer because it slows it way down -->
+									X: <span id="XLocationLabel"></span>
+									Y: <span id="YLocationLabel"></span>
+								</div>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+	</div>
+</td></tr></table>
+	
+</body>
+</html>
